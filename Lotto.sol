@@ -35,6 +35,7 @@ The reward is only 1 ether so it's low enough that miners won't try to influence
   // i'll make contracts for different sized bets eventually.
   function buyIn() payable public returns (uint) {
     if (msg.value * 10 != 1 ether) {
+      revert();
       Rejected();
     } else {
       playerPool.push(msg.sender);
